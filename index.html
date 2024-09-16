@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSQ Tip Out Calculator</title>
+    <link rel ="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>TSQ TIP OUT CALCULATOR</h1>
+    <h2><i>"Don't make James angry...Claim your tips correctly!"</i></h2>
+
+    <div class ="inputs">
+    <form>
+        <label for = "liquor" class = "input">LIQUOR SALES: </label>
+        <input type = "number" id = "liquor" name = "liquor" step = "any"><br>
+
+        <label for = "liquor" class = "input">FOOD SALES: </label>
+        <input type = "number" id = "food" name = "food" step = "any"><br>
+        
+        <label for = 'totalSales' class = "input">TOTAL NET SALES: </label>
+        <input type = "number" id="totalSales" name="totalSales" step ="any"><br>
+
+        <label for = 'noncashTips' class = "input">NON-CASH TIPS: </label>
+        <input type = "number" id = "noncashtips" name = "noncashtips" step = "any"><br>
+
+
+        <button type="button" onclick="calculate()">CALCULATE</button>
+    </form>
+    
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <h3>WEEKLY BULLETIN</h3>
+    <ul>
+        <li>APPLE CIDER DONUTS COMING SOON!</li>
+    </ul>
+
+
+    <script>
+        function calculate(){
+            var foodSales = parseFloat(document.getElementById('food').value);
+            var liquorSales = parseFloat(document.getElementById('liquor').value);
+            var totalSales = parseFloat(document.getElementById('totalSales').value);
+            var noncashTips = parseFloat(document.getElementById('noncashtips').value);
+
+            var foodTip = foodSales * 0.03;
+            var barTip = liquorSales * 0.03;
+            var busserTip = totalSales * 0.015;
+            var tipOut = foodTip + barTip + busserTip;
+
+            var result = noncashTips - tipOut;
+
+            if (isNaN(foodSales) || isNaN(liquorSales) || isNaN(totalSales) || isNaN(noncashTips)) {
+                document.getElementById('result').innerText =
+                'PLEASE ENTER VALID NUMBERS IN ALL FIELDS.';
+                return; // Exit the function
+            }
+
+
+            document.getElementById('result').innerText = 
+            `YOU SHOULD DECLARE $${result.toFixed(2)}.YOUR TIP OUT WAS $${tipOut.toFixed(2)}`;
+            
+        }
+    </script>
+
+
+
+    
+</body>
+
+
+</html>
