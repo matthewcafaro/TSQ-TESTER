@@ -18,7 +18,7 @@ h2{
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 4.5vw;
+    font-size: 5vw;
     justify-content: center;
     align-items:baseline;
     color: aliceblue;
@@ -33,15 +33,24 @@ h2{
 
 h3{
     display:flex;
-    font-size: 7vw;
+    font-size: 6vw;
     justify-content: center;
-    color: cadetblue;
-    margin-top: 5px;
+    align-items: end;
+    color: white;
+    margin-top: 10vw;
+    
     text-shadow: 
       1px 1px 0 #000, 
       -1px -1px 0 #000,  
       1px -1px 0 #000, 
       -1px 1px 0 #000;
+}
+
+a:link{
+    color: lightblue;
+}
+a:visited{
+    color: lightblue
 }
 
 .inputs{
@@ -84,24 +93,24 @@ label{
     text-align:center;
     gap: 20px;
     font-family: monospace;
-    font-size: 5vw;
+    font-size: 5.7vw;
     color: aquamarine;
     text-shadow: 
       1px 1px 0 #000, 
       -1px -1px 0 #000,  
       1px -1px 0 #000, 
       -1px 1px 0 #000;
-      border: 2px solid black;
-      padding: 1px;
-      margin: 10px;
 }
 
 body{
     background-color: #343434;
+    height: 100%;
 }
 
 button{
     font-family: Impact;
     font-size: 4vw;
-    color: black;
 }
+
+
+/* WEEKLY BULLETIN DECORATIONS*/
